@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class AddAvatarAndIntroductionToUsersTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -13,10 +14,13 @@ class AddAvatarAndIntroductionToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar')->nullable();
-            $table->string('introduction')->nullable();
-        });
+        Schema::table(
+            'users',
+            function (Blueprint $table) {
+                $table->string('avatar')->nullable();
+                $table->string('introduction')->nullable();
+            }
+        );
     }
 
     /**
@@ -26,9 +30,12 @@ class AddAvatarAndIntroductionToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar');
-            $table->string('introduction');
-        });
+        Schema::table(
+            'users',
+            function (Blueprint $table) {
+                $table->dropColumn('avatar');
+                $table->dropColumn('introduction');
+            }
+        );
     }
 }
