@@ -72,7 +72,6 @@ body {
   }
 }
 
-
 /* Topic Index Page */
 .topics-index-page {
   .topic-list {
@@ -86,7 +85,7 @@ body {
       color: #444444;
     }
     .meta {
-      font-size:0.9em;
+      font-size: 0.9em;
       color: #b3b3b3;
       a {
         color: #b3b3b3;
@@ -104,24 +103,19 @@ body {
   }
 }
 
-.navbar-static-top {
-  .
-  .
-  .
+.dropdown-menu {
+  padding: 0px;
 
-  .dropdown-menu {
-    padding: 0px;
+  li a {
+    border-bottom: 1px solid #d8d8d8;
+    line-height: 2.4;
 
-    li a {
-      border-bottom: 1px solid #d8d8d8;
-      line-height: 2.4;
-
-      .glyphicon {
-        margin-right: 8px;
-      }
+    .glyphicon {
+      margin-right: 8px;
     }
   }
 }
+
 .users-show-page {
   .user-info {
     .thumbnail {
@@ -132,7 +126,7 @@ body {
   .nav-tabs {
     margin-bottom: 20px;
 
-    >li.active > a {
+    > li.active > a {
       background-color: #fff;
     }
   }
