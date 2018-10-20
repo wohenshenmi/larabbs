@@ -50,3 +50,6 @@ Route::resource(
     'CategoriesController',
     ['only' => ['show']]
 );
+
+Route::post('upload_image', 'TopicsController@uploadImage')
+     ->name('topics.upload_image');
