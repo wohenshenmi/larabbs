@@ -42,8 +42,11 @@ Route::resource(
 Route::resource(
     'topics',
     'TopicsController',
-    ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]
+    ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]
 );
+
+Route::get('topic/{topic}/{slug?}', 'TopicsController@show')
+     ->name('topics.show');
 
 Route::resource(
     'categories',
