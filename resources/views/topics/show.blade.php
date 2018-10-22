@@ -46,7 +46,8 @@
                     @can('update', $topic)
                         <div class="operate">
                             <hr>
-                            <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-xs pull-left" role="button">
+                            <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-default btn-xs pull-left"
+                               role="button">
                                 <i class="glyphicon glyphicon-edit"></i> 编辑
                             </a>
 
@@ -60,6 +61,12 @@
                             </form>
                         </div>
                     @endcan
+                </div>
+            </div>
+            <div class="panel panel-default topic-reply">
+                <div class="panel-body">
+                    @include('topics._reply_box', ['topic' => $topic])
+                    @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
                 </div>
             </div>
         </div>
