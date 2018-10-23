@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -11,6 +12,7 @@ class User extends Authenticatable
     use Notifiable {
         notify as protected laravelNotify;
     }
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
