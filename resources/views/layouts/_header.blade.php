@@ -47,7 +47,8 @@
                     <li>
                         <a href="{{ route('notifications.index') }}" class="notifications-badge"
                            style="margin-top: -2px;">
-                            <span class="badge badge-{{ Auth::user()->notification_count>0?'hint':'fade' }}" title="消息提醒">
+                            <span class="badge badge-{{ Auth::user()->notification_count>0?'hint':'fade' }}"
+                                  title="消息提醒">
                                 {{ Auth::user()->notification_count }}
                             </span>
                         </a>
@@ -62,6 +63,14 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            @can('manage_contents')
+                                <li>
+                                    <a href="{{ url(config('administrator.uri')) }}">
+                                        <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+                                        管理后台
+                                    </a>
+                                </li>
+                            @endcan
                             <li>
                                 <a href="{{ route('users.show', Auth::id()) }}">
                                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
